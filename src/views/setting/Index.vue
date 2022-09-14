@@ -1,16 +1,6 @@
 <template>
   <a class="arrow" href="#">&larr; Back</a>
   <div class="content">
-    <div class="content__info">
-      <h2 class="content__title">Information</h2>
-      <a class="btn btn-primary active" href="#"
-        ><i class="icon-terms"></i> Terms & Conditions</a
-      >
-      <a class="btn" href="#"><i class="icon-lock"></i> Privacy</a>
-      <a class="btn" href="#"><i class="icon-hand"></i> Fees</a>
-      <a class="btn" href="#"><i class="icon-information"></i> Information</a>
-    </div>
-
     <div class="content__terms">
       <b-card no-body>
         <b-tabs card>
