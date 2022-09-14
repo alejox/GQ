@@ -22,6 +22,8 @@
 <script>
 import privacy from "./Privacy.vue";
 import terms from "./Terms.vue";
+import fees from "./Fees.vue";
+import information from "./Information.vue";
 export default {
   setup() {
     const tabsComissions = [
@@ -29,25 +31,25 @@ export default {
         name: "Terms & Conditions",
         title: "Datos personales",
         component: terms,
-        icon: "user-edit",
+        icon: "terms",
       },
       {
         name: "Privacy",
         title: "Seguridad",
         component: privacy,
-        icon: "lock-key",
+        icon: "lock",
       },
       {
         name: "Fees",
         title: "Referidos",
-        component: terms,
-        icon: "Icon-plus",
+        component: fees,
+        icon: "hand",
       },
       {
         name: "Information",
         title: "Verificación KYC",
-        component: terms,
-        icon: "checklist",
+        component: information,
+        icon: "information",
       },
     ];
     return {
@@ -114,5 +116,9 @@ export default {
   background-color: rgb(0, 42, 77);
   border: none !important;
   border-radius: 16px;
+}
+
+i{
+  margin-right: 12px;
 }
 </style>
