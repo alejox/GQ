@@ -1,9 +1,14 @@
 <template>
   <div class="container">
-    <router-link :to="{name:'Team', params: { username: user.username } }" class="text-right">
-      <button class="btn btn-primary" v-if="username">
-        Back to me
-      </button>
+    <router-link
+      :to="{ name: 'Team', params: { username: user.username } }"
+      class="text-right"
+    >
+      <div class="btns">
+        <button class="btn btn-primary btnC" v-if="username">Back to me</button>
+
+        <InputSearch class="search" @input="setData"></InputSearch>
+      </div>
     </router-link>
     <div class="tree-container mt-4" v-if="team.length > 0">
       <Tree :childrens="team[0]" />
@@ -12,66 +17,75 @@
 </template>
 
 <script>
-import Tree from './Tree.vue'
-import { mapActions, mapState } from 'vuex'
+import { ref } from "@vue/reactivity";
+import Tree from "./Tree.vue";
+import { mapActions, mapState } from "vuex";
+import InputSearch from "../../components/InputSearch.vue";
 export default {
-  props: ['username'],
-  name: 'treemap',
-  components: { Tree },
-  data () {
+  props: ["username"],
+  name: "treemap",
+  components: { Tree, InputSearch },
+  setup() {
+    const textInput = ref("");
+    const setData = (data) => {
+      textInput.value = data;
+    };
     return {
-    }
+      setData,
+    };
   },
-  created () {
+  data() {
+    return {};
+  },
+  created() {
     if (this.username) {
-      this.getIdUser(this.username).then(response => {
+      this.getIdUser(this.username).then((response) => {
         if (response) {
-          this.getTeam(response)
+          this.getTeam(response);
         }
-      })
+      });
     } else {
-      this.getTeam(this.user.id)
+      this.getTeam(this.user.id);
     }
   },
   methods: {
-    ...mapActions('user', ['getTeam', 'getIdUser']),
-    searchOtherUser (node) {
-      this.$router.push(
-        {
-          name: 'default.Team',
-          params: { username: node.name }
-        }
-      )
+    ...mapActions("user", ["getTeam", "getIdUser"]),
+    searchOtherUser(node) {
+      this.$router.push({
+        name: "default.Team",
+        params: { username: node.name },
+      });
     },
-    backToMe (id) {
-      this.getTeam(id)
-    }
+    backToMe(id) {
+      this.getTeam(id);
+    },
   },
   computed: {
-    ...mapState('user', ['team']),
-    ...mapState('auth', ['user'])
+    ...mapState("user", ["team"]),
+    ...mapState("auth", ["user"]),
   },
   watch: {
     username: function () {
       if (this.username) {
-        this.getIdUser(this.username).then(response => {
+        this.getIdUser(this.username).then((response) => {
           if (response) {
-            this.getTeam(response)
+            this.getTeam(response);
           }
-        })
+        });
       } else {
-        this.getTeam(this.user.id)
+        this.getTeam(this.user.id);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
-
-.tree-container{
+.tree-container {
   min-height: 60vh;
 }
+
+
 
 .rich-media-node {
   width: 120px;
@@ -80,20 +94,20 @@ export default {
   flex-direction: column;
   justify-content: center;
   color: black;
-  background-color: #00CCCC;
+  background-color: #00cccc;
   text-align: center;
   border-radius: 4px;
 }
-.node .person .avat{
+.node .person .avat {
   background: transparent !important;
   border: none !important;
   width: 70px !important;
   height: 60px !important;
 }
-.extend_handle{
-  transform: translate3d(-18px,0,0) !important;
+.extend_handle {
+  transform: translate3d(-18px, 0, 0) !important;
 }
-.extend_handle:before{
+.extend_handle:before {
   width: 10px !important;
   height: 10px !important;
 }
