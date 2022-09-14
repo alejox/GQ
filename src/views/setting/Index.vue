@@ -1,18 +1,22 @@
 <template>
   <a class="arrow" href="#">&larr; Back</a>
-  <div class="content">
-    <div class="content__terms">
-      <b-card no-body>
-        <b-tabs card>
-          <b-tab v-for="index in tabsComissions" :title="index.name">
-            <b-card-text>
-              <component :is="index.component"></component>
-            </b-card-text>
-          </b-tab>
-        </b-tabs>
-      </b-card>
-    </div>
-  </div>
+  <section class="settingPage">
+    <b-card no-body>
+      <b-tabs card>
+        <template #tabs-start>
+          <h2>Information</h2>
+        </template>
+        <b-tab v-for="(element, index) in tabsComissions" :key="index">
+          <template #title>
+            <i :class="`icon-${element.icon}`"></i>{{ element.name }}
+          </template>
+          <b-card-text>
+            <component :is="element.component"></component>
+          </b-card-text>
+        </b-tab>
+      </b-tabs>
+    </b-card>
+  </section>
 </template>
 
 <script>
@@ -55,7 +59,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .arrow {
   color: white;
   text-decoration: none;
@@ -63,20 +67,17 @@ export default {
   text-align: left;
   margin-bottom: 24px;
 }
-.content {
-  display: flex;
-  width: 100%;
+.settingPage .card {
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
-.content__info {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  background-color: #002a4d;
-  padding: 48px;
-  border-radius: 16px;
+.settingPage .tabs {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 35% 65%;
 }
-.content__title {
+.settingPage .tabs h2 {
   font-size: 26px;
   font-weight: 700;
   line-height: 32px;
@@ -85,21 +86,33 @@ export default {
   color: white;
   margin-bottom: 32px;
 }
-.btn {
-  margin-bottom: 24px;
-  color: white;
-  text-align: left;
-  padding: 12px 20px;
-}
-i {
-  margin-right: 12px;
-  font-size: 24px;
-}
-.content__terms {
-  background-color: #002a4d;
-  padding: 48px;
-  margin-left: 24px;
+.settingPage .card-header {
+  padding: 50px;
+  background-color: rgb(0, 42, 77);
+  border: none !important;
   border-radius: 16px;
-  width: 70%;
+
+}
+.settingPage ul {
+  display: grid;
+  border: none !important;
+}
+.settingPage .nav-tabs .nav-link{
+  width: 100%;
+  text-align: start;
+  color: white;
+  border-radius: 16px;
+}
+.settingPage .nav-tabs .nav-link.active{
+  font-weight: 700;
+  color: #222222 !important;
+  background-color: #15DC39 !important;
+  border: none !important;
+}
+.settingPage .tab-content{
+  padding: 40px;
+  background-color: rgb(0, 42, 77);
+  border: none !important;
+  border-radius: 16px;
 }
 </style>
