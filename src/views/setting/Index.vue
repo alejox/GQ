@@ -60,6 +60,14 @@ export default {
 </script>
 
 <style>
+  .Setting .sidebar{
+      display: none;
+  }
+  .Setting .home{
+      width: 100%;
+      padding: 0px 30px;
+      margin-left: 0;
+  }
 .arrow {
   color: white;
   text-decoration: none;

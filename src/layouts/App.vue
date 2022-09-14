@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :class="$route.name">
         <Sidebar />
         <div class="home">
             <Navbar />
