@@ -2,19 +2,21 @@
   <h2>Fees</h2>
   <div class="card">
     <div class="card__content">
-      <img src="" alt="" />
+      <img class="card__logo" src="../../assets/images/logo.svg" alt="" />
       <div class="card__box">
         <div class="card__text">
-          <h3>USDT Exchange</h3>
-          <p>USDT/QTA</p>
-          <p>USDT/GQ</p>
-          <p>USDT/GQUSD</p>
-          <p>USDT/MXP</p>
-          <p>USTD/VUSD</p>
-          <p>USTD/TURC</p>
+          <div class="card__title">
+            <h3>USDT Exchange</h3>
+          </div>
+          <p class="text">USDT/QTA</p>
+          <p class="text">USDT/GQ</p>
+          <p class="text">USDT/GQUSD</p>
+          <p class="text">USDT/MXP</p>
+          <p class="text">USTD/VUSD</p>
+          <p class="text">USTD/TURC</p>
         </div>
         <div class="card__img">
-          <img src="" alt="" />
+          <img src="../../assets/icons/tether.svg" alt="" />
         </div>
       </div>
     </div>
@@ -32,6 +34,24 @@ h2 {
   margin-bottom: 32px;
 }
 
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #222222;
+}
+
+.text{
+font-size: 14px;
+font-weight: 300;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: left;
+color: #222222;
+
+}
 .card {
   background: linear-gradient(
     180deg,
@@ -43,9 +63,21 @@ h2 {
   width: 266px;
 }
 
-.card__content{
+.card__content {
   background-color: white;
   border-radius: 16px;
   padding: 16px;
+}
+
+.card__box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__logo {
+  display: block;
+  width: 86px;
+  margin: 0 auto;
+  margin-bottom: 26px;
 }
 </style>
