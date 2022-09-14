@@ -1,5 +1,5 @@
 <template>
-  <h1>Terms & Conditions</h1>
+  <h2>Terms & Conditions</h2>
   <section class="termsContainer">
     <TermCardVue v-for="index in 4 " :key="index"></TermCardVue>
   </section>

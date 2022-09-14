@@ -1,6 +1,6 @@
 <template>
   <h2>Fees</h2>
-  <section>
+  <section class="fees">
     <FeesCard />
     <FeesCard />
     <FeesCard />
@@ -14,11 +14,17 @@
 <script>
 import FeesCard from "../../components/FeesCard.vue";
 export default{
-
+  components:{
+    FeesCard
+  }
 }
 </script>
 
 <style scoped>
+  .fees{
+    display: flex;
+    flex-wrap: wrap;
+  }
 h2 {
   font-size: 26px;
   font-weight: 700;
