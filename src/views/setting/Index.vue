@@ -75,7 +75,8 @@ export default {
 .settingPage .tabs {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 30% 65%;
+  padding-bottom: 30px;
 }
 .settingPage .tabs h2 {
   font-size: 26px;
@@ -87,6 +88,7 @@ export default {
   margin-bottom: 32px;
 }
 .settingPage .card-header {
+  max-height: 400px;
   padding: 50px;
   background-color: rgb(0, 42, 77);
   border: none !important;
