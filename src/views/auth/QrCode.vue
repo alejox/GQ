@@ -3,7 +3,7 @@
         <div class="img-auto-logo">
             <img class="w-100" style="max-width:100px" src="@/assets/images/logo.svg" alt="">
         </div>
-        <h3 class="mt-4">
+        <h3 class="mt-4 text-center">
             Welcome, it's good that you're here.
         </h3>
         <h6>

@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <footer>
             <div class="row p-1">
                 <div class="col text-center">
@@ -45,4 +45,4 @@
             margin-left: 20px;
         }
     }
-</style>
+</style> -->

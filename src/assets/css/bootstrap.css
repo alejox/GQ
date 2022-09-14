@@ -60,11 +60,11 @@
 
 .btn-outline-primary{
     color: #13DC38 !important;
-    border-color: #13DC38 !important;
+    border-color: transparent !important;
 }
 
 .btn-outline-primary:hover{
-    color: white !important;
+    color:  #023259 !important;
     background-color: #13DC38 !important;
 }
 
