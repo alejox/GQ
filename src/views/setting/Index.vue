@@ -31,25 +31,25 @@ export default {
         name: "Terms & Conditions",
         title: "Datos personales",
         component: terms,
-        icon: "user-edit",
+        icon: "terms",
       },
       {
         name: "Privacy",
         title: "Seguridad",
         component: privacy,
-        icon: "lock-key",
+        icon: "lock",
       },
       {
         name: "Fees",
         title: "Referidos",
         component: fees,
-        icon: "Icon-plus",
+        icon: "hand",
       },
       {
         name: "Information",
         title: "Verificación KYC",
         component: information,
-        icon: "checklist",
+        icon: "information",
       },
     ];
     return {
@@ -114,5 +114,9 @@ export default {
   background-color: rgb(0, 42, 77);
   border: none !important;
   border-radius: 16px;
+}
+
+i{
+  margin-right: 12px;
 }
 </style>
