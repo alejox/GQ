@@ -18,31 +18,33 @@
 <script>
 import privacy from "./Privacy.vue";
 import terms from "./Terms.vue";
+import fees from "./Fees.vue";
+import information from "./Information.vue";
 export default {
   setup() {
     const tabsComissions = [
       {
-        name: "data",
+        name: "Terms & Conditions",
         title: "Datos personales",
         component: terms,
         icon: "user-edit",
       },
       {
-        name: "security",
+        name: "Privacy",
         title: "Seguridad",
         component: privacy,
         icon: "lock-key",
       },
       {
-        name: "referrals",
+        name: "Fees",
         title: "Referidos",
-        component: terms,
+        component: fees,
         icon: "Icon-plus",
       },
       {
-        name: "validation",
+        name: "Information",
         title: "Verificación KYC",
-        component: terms,
+        component: information,
         icon: "checklist",
       },
     ];
