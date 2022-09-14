@@ -1,15 +1,16 @@
 <template>
   <div class="container">
-    <router-link
-      :to="{ name: 'Team', params: { username: user.username } }"
-      class="text-right"
-    >
-      <div class="btns">
-        <button class="btn btn-primary btnC" v-if="username">Back to me</button>
-
+    <article class="container__buttons">
+      <router-link
+        :to="{ name: 'Team', params: { username: user.username } }"
+        class="text-right"
+      >
+          <button class="btn btn-primary btnC" v-if="username">Back to me</button>
+      </router-link>
+      <div>
         <InputSearch class="search" @input="setData"></InputSearch>
       </div>
-    </router-link>
+    </article>
     <div class="tree-container mt-4" v-if="team.length > 0">
       <Tree :childrens="team[0]" />
     </div>
@@ -86,7 +87,19 @@ export default {
 }
 
 
+.container__buttons{
+  display: flex;
+  justify-content: end;
+}
+.container__buttons div{
+  display: flex;
+  justify-content: end;
 
+  width: 50%;
+}
+.container__buttons .inputSearch{
+  min-width: 300px;
+}
 .rich-media-node {
   width: 120px;
   padding: 4px;
