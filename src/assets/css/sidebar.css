@@ -1,0 +1,89 @@
+/* ===== Sidebar ===== */
+.sidebar{
+    position: fixed;
+    top: 20px;
+    left: 15px;
+    height: calc(100% - 40px);
+    width: 120px;
+    padding: 10px 14px;
+    transition: var(--tran-05);
+    z-index: 100;
+    background: rgba(0, 42, 77, 0.8);
+    backdrop-filter: blur(50px);
+    border-radius: 24px;
+}
+
+.sidebar .menu-bar{
+    margin-top: 30px !important;
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+}
+/* ===== Reusable code - Here ===== */
+
+.sidebar header .image img{
+    width: 80%;
+    margin-top: 20px;
+}
+.sidebar ul {
+    padding-left: 0rem !important;
+}
+.sidebar li{
+    list-style: none;
+    align-items: center;
+}
+.nav-link{
+    margin-top: 10px;
+    padding: 0px !important;
+}
+.nav-link a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.sidebar .nav-link .router-link-exact-active::after{
+    content: "";
+    background: #13DC38;
+    position: absolute;
+    right: 0;
+    height: 60px;
+    margin-top: -60px;
+    width: 3px;
+}
+
+.sidebar .nav-link .router-link-exact-active svg, .sidebar .nav-link:hover svg, .sidebar .nav-link:hover svg rect{
+    background: rgba(227, 200, 122, 0.1);
+    border-radius: 15px;
+    stroke: #13DC38 !important;
+    transition: .5s all;
+}
+
+.sidebar .nav-link .router-link-exact-active svg path, .sidebar .nav-link:hover svg path, .sidebar .nav-link:hover svg rect{
+    stroke: #13DC38 !important;
+    transition: .5s all;
+}
+
+.sidebar .nav-link .router-link-exact-active .text, .sidebar .nav-link:hover .text{
+    color: #13DC38;
+    transition: .5s all;
+}
+
+.home{
+    top: 0;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    transition: var(--tran-05);
+}
+.home .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+}
+
+.sidebar.close ~ .home{
+    margin-left: 170px;
+    width: calc(100% - 200px);
+}

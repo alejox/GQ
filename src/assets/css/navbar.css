@@ -1,0 +1,14 @@
+.breadcum{
+    text-align: left;
+}
+.breadcum h3{
+    font-size: 48px;
+    color: white;
+}
+
+.navbar{
+    text-align: right !important;
+}
+.navbar{
+    display: initial !important;
+}

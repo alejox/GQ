@@ -1,0 +1,100 @@
+<template>
+  <div class="container">
+    <router-link :to="{name:'Team', params: { username: user.username } }" class="text-right">
+      <button class="btn btn-primary" v-if="username">
+        Back to me
+      </button>
+    </router-link>
+    <div class="tree-container mt-4" v-if="team.length > 0">
+      <Tree :childrens="team[0]" />
+    </div>
+  </div>
+</template>
+
+<script>
+import Tree from './Tree.vue'
+import { mapActions, mapState } from 'vuex'
+export default {
+  props: ['username'],
+  name: 'treemap',
+  components: { Tree },
+  data () {
+    return {
+    }
+  },
+  created () {
+    if (this.username) {
+      this.getIdUser(this.username).then(response => {
+        if (response) {
+          this.getTeam(response)
+        }
+      })
+    } else {
+      this.getTeam(this.user.id)
+    }
+  },
+  methods: {
+    ...mapActions('user', ['getTeam', 'getIdUser']),
+    searchOtherUser (node) {
+      this.$router.push(
+        {
+          name: 'default.Team',
+          params: { username: node.name }
+        }
+      )
+    },
+    backToMe (id) {
+      this.getTeam(id)
+    }
+  },
+  computed: {
+    ...mapState('user', ['team']),
+    ...mapState('auth', ['user'])
+  },
+  watch: {
+    username: function () {
+      if (this.username) {
+        this.getIdUser(this.username).then(response => {
+          if (response) {
+            this.getTeam(response)
+          }
+        })
+      } else {
+        this.getTeam(this.user.id)
+      }
+    }
+  }
+}
+</script>
+
+<style>
+
+.tree-container{
+  min-height: 60vh;
+}
+
+.rich-media-node {
+  width: 120px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  background-color: #00CCCC;
+  text-align: center;
+  border-radius: 4px;
+}
+.node .person .avat{
+  background: transparent !important;
+  border: none !important;
+  width: 70px !important;
+  height: 60px !important;
+}
+.extend_handle{
+  transform: translate3d(-18px,0,0) !important;
+}
+.extend_handle:before{
+  width: 10px !important;
+  height: 10px !important;
+}
+</style>
