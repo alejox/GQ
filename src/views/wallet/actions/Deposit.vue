@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row modalQR">
         <div class="col-12 col-sm-4 col-md-4 mb-3">
             <qrcode-vue :value="address" size="200" level="M"/>
         </div>
@@ -23,3 +23,16 @@ export default {
     }
 }
 </script>
+<style scoped>
+    .modalQR{
+        padding: 20px;
+        justify-content: center;
+    }
+    .modalQR > div:last-child{
+        margin-left: -20px;
+    }
+    .modalQR .copy-section{
+        margin-left: 0;
+    }
+
+</style>

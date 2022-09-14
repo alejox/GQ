@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-lg-9 col-md-8 row">
+            <div class="col-sm-12 col-lg-9 col-md-8 row infoWallet">
                 <div class="row">
                     <div class="col-12">
                         <Balance :wallet="cardActive" />
@@ -95,10 +95,17 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
     .scrollable{
         height: 900px;
         overflow-y: scroll;
         background: transparent;
+    }
+    .infoWallet {
+        justify-content: flex-end !important;
+
+    }
+    .infoWallet .row{
+        justify-content: flex-end !important;
     }
 </style>

@@ -87,3 +87,10 @@ export default {
     }
 }
 </script>
+<style>
+    ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    border-radius: 50%;
+    padding: 4px;
+  }
+</style>

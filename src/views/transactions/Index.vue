@@ -1,4 +1,9 @@
 <template>
+    <div class="text-right mb-3">
+      <b-button variant="primary" size="lg" @click="modalCreate = true">
+        Retirar total available
+      </b-button>
+    </div>
     <div>
         <Comissions />
         <Transactions/>
